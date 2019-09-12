@@ -18,7 +18,10 @@ def load_word():
     return secret_word
 
 def is_word_guessed(secret_word, letters_guessed):
-    return secret_word == letters_guessed
+    for letter in secret_word:
+        if letter not in letters_guessed:
+            return False
+    return True
 
 def get_guessed_word(secret_word, letters_guessed):
     word_guessed = ""
@@ -40,6 +43,7 @@ def spaceman(secret_word):
     print("There are " + str(len(secret_word)) + " letters." )
     print("Hurry up and save the Spaceman!")
     print("––––––––––––––––––––––––––––––––––––––––––––––––––––––––––\n")
+    
     running = True
     word_guessed = []
     num_guess = 0
@@ -71,7 +75,7 @@ def spaceman(secret_word):
 
 #TODO: check if the game has been won or lost
 
-        if is_word_guessed(secret_word_chars, word_guessed):
+        if is_word_guessed(secret_word, word_guessed):
             print("–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––")
             print("\nYou have guessed the sercet word!\n")
             print("The secret word was: " + secret_word)
