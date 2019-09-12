@@ -43,13 +43,13 @@ def spaceman(secret_word):
     print("There are " + str(len(secret_word)) + " letters." )
     print("Hurry up and save the Spaceman!")
     print("––––––––––––––––––––––––––––––––––––––––––––––––––––––––––\n")
-    
+
     running = True
     word_guessed = []
     num_guess = 0
 
     while running == True:
-        print("You have " + (str(7 - num_guess)) + " guesses left!")
+        print("You have " + (str(len(secret_word) - num_guess)) + " guesses left!")
         guess = ""
 
         while True:
@@ -87,7 +87,7 @@ def spaceman(secret_word):
             else:
                 break
 
-        if num_guess == 7:
+        if num_guess == len(secret_word):
             print("–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––")
             print("\nOh no! You weren't able to save our Spaceman!")
             print("Thank you for trying, I know the conditions were seve.\n")
