@@ -99,8 +99,26 @@ def spaceman(secret_word):
                 return True
             else:
                 break
+def test_1():
+    assert is_word_guessed("apple","apple") == True
+    assert is_word_guessed("apple","carrots") == False
+
+def test_2():
+    assert is_guess_in_word("k","kikat") == True
+    assert is_guess_in_word("s","coolio") == False
+
+def test_3():
+    assert get_guessed_word("sammy","m") == "_ _ m m _ "
+    assert get_guessed_word("cables","c") == "c _ _ _ _ _ "
+
+if __name__ == "__main__":
+    test_2()
+
 
 #These function calls that will start the game
+
 secret_word = load_word()
 secret_word_chars = list(secret_word)
+"""
 spaceman(secret_word)
+"""
